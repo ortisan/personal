@@ -1,0 +1,12 @@
+{
+  "globalDependencies": {
+    "bluebird": "registry:dt/bluebird#3.0.0+20160811111256",
+    "bookshelf": "registry:dt/bookshelf#0.8.2+20160811111312",
+    "bunyan": "registry:dt/bunyan#0.0.0+20160412155112",
+    "create-error": "registry:dt/create-error#0.3.1+20160316155526",
+    "knex": "registry:dt/knex#0.0.0+20160819212955",
+    "lodash": "registry:dt/lodash#4.14.0+20160830145422",
+    "node": "registry:dt/node#6.0.0+20160906151955",
+    "restify": "registry:dt/restify#2.0.0+20160726153409"
+  }
+}
