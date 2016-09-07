@@ -1,5 +1,3 @@
-./idea/**
-
 
 # Logs
 logs
@@ -40,8 +38,12 @@ jspm_packages
 # Optional eslint cache
 .eslintcache
 
+# Typescript
 src/*.js
 src/*.map
 
 app/*.js
 app/*.map
+
+#IDE
+./idea/**

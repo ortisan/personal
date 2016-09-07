@@ -6,37 +6,37 @@ import {UsersService} from './users.service'
 
 
 @Component({
-    selector: 'my-heroes',
-    templateUrl: 'app/templates/heroes-template.html',
+    selector: 'my-users',
+    templateUrl: 'app/templates/users-template.html',
     providers: [UsersService]
 })
 export class UsersComponent implements OnInit {
 
-    heroes: User[];
+    users: User[];
 
-    hero: User;
+    user: User;
 
-    selectedHero: User;
+    selectedUser: User;
+
 
     constructor(private router: Router, private usersService: UsersService) {
-        this.usersService = usersService;
     }
 
     ngOnInit(): void {
-        this.getHeroes();
+        this.getUsers();
     }
 
-    getHeroes(): void {
-        this.usersService.getHeroes().then((heroes: User[])=> {
-            this.heroes = heroes;
-        })
+    getUsers(): void {
+        this.usersService.getUsers().then((users: User[])=> {
+            this.users = users;
+        });
     }
 
-    onSelect(hero: User) {
-        this.selectedHero = hero;
+    onSelect(user: User) {
+        this.selectedUser = user;
     }
 
     gotoDetail(): void {
-        this.router.navigate(['/detail', this.selectedHero.id]);
+        this.router.navigate(['/detail', this.selectedUser.id]);
     }
 }

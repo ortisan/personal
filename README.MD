@@ -26,3 +26,9 @@ knex migrate:make personal-trainer
 ```
 knex migrate:latest --env development
 ```
+
+### GIT
+#### Remove after commit
+```
+git rm --cached -r app/*.js
+```

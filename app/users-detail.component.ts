@@ -4,8 +4,8 @@ import {UsersService} from './users.service';
 import {User} from './user';
 
 @Component({
-    selector: 'my-hero-detail',
-    templateUrl: 'app/templates/hero-detail-template.html',
+    selector: 'my-user-detail',
+    templateUrl: 'app/templates/user-detail-template.html',
     providers: [UsersService]
 })
 export class UsersDetailComponent implements OnInit {
@@ -18,7 +18,7 @@ export class UsersDetailComponent implements OnInit {
     ngOnInit(): void {
         this.route.params.forEach((param: Params) => {
             let id = param['id'];
-            this.usersServices.getHero(id);
+            this.usersServices.getUser(id);
         });
     }
 

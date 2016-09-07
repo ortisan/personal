@@ -9,6 +9,15 @@ const server = restify.createServer({
     log: logger
 });
 
+server.use(restify.CORS());
+/*
+server.use(restify.CORS({
+    origins: ['https://foo.com', 'http://bar.com', 'http://baz.com:8081'],   // defaults to ['*']
+    credentials: true,                 // defaults to false
+    headers: ['x-foo']                 // sets expose-headers
+}));
+*/
+
 
 function send(req, res, next) {
     res.send('hello ' + req.params.name);
@@ -25,6 +34,20 @@ server.head('/hello/:name', send);
 server.del('hello/:name', function rm(req, res, next) {
     res.send(204);
     return next();
+});
+
+
+server.get('/users', function (req, res, next) {
+
+    res.send([
+        {id: 1, name: 'Mr. Nice', email: 'teste@teste.com'},
+        {id: 1, name: 'Mr. Nice', email: 'teste@teste.com'},
+        {id: 1, name: 'Mr. Nice', email: 'teste@teste.com'},
+        {id: 1, name: 'Mr. Nice', email: 'teste@teste.com'}
+    ]);
+
+    next();
+
 });
 
 server.listen(8080);
